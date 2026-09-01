@@ -3,7 +3,7 @@ import type { Department, Student, Teacher } from '../types';
 const BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
 
 async function get<T>(path: string, params?: Record<string, string>): Promise<T> {
-  const url = new URL(`${BASE}${path}`);
+  const url = new URL(`${BASE}${path}`, window.location.origin);
   if (params) Object.entries(params).forEach(([k, v]) => v && url.searchParams.set(k, v));
   const res = await fetch(url.toString());
   if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);

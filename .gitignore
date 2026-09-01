@@ -1,0 +1,17 @@
+# Python
+school-backend/venv/
+school-backend/__pycache__/
+school-backend/**/__pycache__/
+school-backend/*.pyc
+school-backend/staticfiles/
+
+# Secrets
+school-backend/.env
+
+# React build output & deps
+school-dashboard/node_modules/
+school-dashboard/dist/
+
+# OS
+.DS_Store
+Thumbs.db
